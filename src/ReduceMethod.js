@@ -1,6 +1,6 @@
 import React from "react";
 
-function ReduceMehod() {
+function ReduceMethod() {
   const euros = [29.76, 41.85, 46.5];
 
   const arraySum = euros.reduce((total, value, index, array) => {
@@ -89,10 +89,7 @@ function ReduceMehod() {
 
   const filteredObjectColors = () => {
     return dataObjects.reduce((total, value, index, array) => {
-      /* eslint-disable array-callback-return */
-      value?.c?.map((e) => {
-        total.push(e);
-      });
+      value?.c?.map((e) => total.push(e));
       return total;
     }, []);
   };
@@ -100,7 +97,9 @@ function ReduceMehod() {
     return dataObjects.reduce((total, value, index, array) => {
       /* eslint-disable array-callback-return */
       value?.c?.map((e) => {
-        if (!total.includes(e)) {
+        if (total.includes(e)) {
+          return;
+        } else {
           total.push(e);
         }
       });
@@ -120,7 +119,7 @@ function ReduceMehod() {
 
   console.log(filterdObjects(), "filterdObjects");
 
-  return <div>ReduceMehod</div>;
+  return <div>ReduceMethod</div>;
 }
 
-export default ReduceMehod;
+export default ReduceMethod;
