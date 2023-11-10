@@ -1,7 +1,10 @@
 import React from "react";
+import products from "./products.json";
 
 function ReduceMethod() {
   const euros = [29.76, 41.85, 46.5];
+  let productIndex = products?.products.map((e) => e?.productIndex);
+  console.log(productIndex, "productIndex");
 
   const arraySum = euros.reduce((total, value, index, array) => {
     return (total += value);
