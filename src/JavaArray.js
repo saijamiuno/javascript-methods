@@ -27,6 +27,24 @@ function JavaArray() {
 
   console.log(isNameExist("Terrill"), "isNameExist");
 
+  const array1 = [1, 2, 3];
+
+  // const append = (array, element) => {
+  //   array.push(element);
+  //   return array;
+  // };
+
+  // console.log(append(array1, 4));
+  // console.log(array1);
+
+  const append = (array, element) => {
+    const newArray = [...array, element];
+    return newArray;
+  };
+
+  console.log(append(array1, 4));
+  console.log(array1);
+
   return <div>JS</div>;
 }
 
