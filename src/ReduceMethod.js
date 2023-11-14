@@ -1,10 +1,106 @@
 import React from "react";
 import products from "./products.json";
+import products1 from "./inventoryProducts.json";
 
 function ReduceMethod() {
   const euros = [29.76, 41.85, 46.5];
   let productIndex = products?.products.map((e) => e?.productIndex);
+  let invetory = products1?.products1;
+
   console.log(productIndex, "productIndex");
+  console.log(invetory, "invetory");
+
+  const findDuplicateProductNumbers = () => {
+    // const uniqueProductNumbers = [];
+    // const duplicateProductNumbers = [];
+
+    // invetory.forEach((value) => {
+    //   const productNumber = value?.productNumber;
+
+    //   if (uniqueProductNumbers.includes(productNumber)) {
+    //     duplicateProductNumbers.push(productNumber);
+    //   } else {
+    //     uniqueProductNumbers.push(productNumber);
+    //   }
+    // });
+
+    // return duplicateProductNumbers;
+    let james = [
+      {
+        name: "james",
+        age: 20,
+      },
+      {
+        name: "james",
+        age: 29,
+      },
+      {
+        name: "jami",
+        age: 25,
+      },
+      {
+        name: "syed",
+        age: 18,
+      },
+    ];
+
+    let totalAges = james?.reduce(
+      (acc, value) => {
+        if (value?.name === "james") {
+          acc.jamesNum += value.age;
+        } else if (value?.name === "syed") {
+          acc.syed += value.age;
+        } else {
+          acc.sai += value.age;
+        }
+        return acc;
+      },
+      { jamesNum: 0, syed: 0, sai: 0 }
+    );
+
+    console.log(totalAges, "totalAges");
+
+    // let jamesNum = 0,
+    //   aliNum = 0,
+    //   jamiNum = 0;
+    // james.map((s) => {
+    //   if (s.name === "james") {
+    //     jamesNum += s.age;
+    //   } else if (s.name === "jami") {
+    //     aliNum += s.age;
+    //   } else {
+    //     jamiNum += s.age;
+    //   }
+    // });
+    // console.log({
+    //   jamesNum,
+    //   aliNum,
+    //   jamiNum,
+    // });
+    // return {
+    //   jamesNum,
+    //   aliNum,
+    //   jamiNum,
+    // };
+
+    const ali = invetory.reduce(
+      (accumulator, value) => {
+        const productNumber = value?.productNumber;
+
+        if (accumulator.uniqueProductNumbers.includes(productNumber)) {
+          accumulator.duplicateProductNumbers.push(productNumber);
+        } else {
+          accumulator.uniqueProductNumbers.push(productNumber);
+        }
+
+        return accumulator;
+      },
+      { uniqueProductNumbers: [], duplicateProductNumbers: [] }
+    );
+    console.log(ali.uniqueProductNumbers, "alll");
+  };
+
+  console.log(findDuplicateProductNumbers(), "findDuplicateProductNumbers");
 
   const arraySum = euros.reduce((total, value, index, array) => {
     return (total += value);
