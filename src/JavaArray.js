@@ -45,6 +45,44 @@ function JavaArray() {
   console.log(append(array1, 4));
   console.log(array1);
 
+  // Duplicates Remove L0
+
+  // function uniqueArray(array) {
+  //   let unqueElements = [];
+  //   array?.forEach((element) => {
+  //     if (!unqueElements.includes(element)) {
+  //       unqueElements.push(element);
+  //     }
+  //   });
+  //   return unqueElements;
+  // }
+
+  // const numbersArray = [1, 2, 5, 2, 3, 5, 6, 8];
+  // console.log(uniqueArray(numbersArray), "uniqueArray");
+  // console.log(numbersArray, "numbersArray");
+
+  // Duplicates Remove L1
+
+  // function uniqueArray(array) {
+  //   return [...new Set(array)];
+  // }
+
+  // const numbersArray = [1, 2, 5, 2, 3, 5, 6, 8];
+  // console.log(uniqueArray(numbersArray), "uniqueArray");
+  // console.log(numbersArray, "numbersArray");
+
+  // Duplicates Remove L2
+
+  function uniqueArray(array) {
+    return array?.reduce((total, value) => {
+      return total.includes(value) ? total : [...total, value];
+    }, []);
+  }
+
+  const numbersArray = [1, 2, 5, 2, 3, 5, 6, 7, 8];
+
+  console.log(uniqueArray(numbersArray), "uniqueArray");
+
   return <div>JS</div>;
 }
 
