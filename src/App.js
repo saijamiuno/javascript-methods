@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import ReduceMethod from "./ReduceMethod";
 import JavaArray from "./JavaArray";
+import Respose from "./Respose";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <p>{/* Edit <code>src/App.js</code> and save to reload. */}</p>
         <ReduceMethod />
         <JavaArray />
+        <Respose />
       </header>
     </div>
   );
